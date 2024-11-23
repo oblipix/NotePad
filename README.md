@@ -90,7 +90,9 @@ ___
 
 **Funcionalidades**
 
-◾Interface Simples e Intuitiva:  Design minimalista e fácil de usar, adequado para todos os tipos de usuários.
+◾ Interface Simples e Intuitiva:  Design minimalista e fácil de usar, adequado para todos os tipos de usuários.
+
+◾ Multi-plataforma: Funciona em Windows, macOS e Linux.
 
 ◾ Criação e Edição de Notas: Permite criar, salvar e gerenciar suas anotações de forma rápida e organizada.
 
