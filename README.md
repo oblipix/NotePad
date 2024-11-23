@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/52d8509c-638a-4f99-aa85-1396e73c9fe9
 
 
 
-| Language | Download Windows |
+| Language | Download |
 | --- | --- |
 | `PT-BR`   | https://www.mediafire.com/file/yw7yphao6ekdsyt/Notepad-ptBr_Setup_1.0.0.exe/file |
 | `ENGLISH` | https://www.mediafire.com/file/uwhm1qxae9lsvb9/Notepad-Eng_Setup_1.0.0.exe/file |
