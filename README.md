@@ -126,7 +126,7 @@ digitando toda vez.
 >
 >
 >
->   <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js Logo" width="20"/> Ter o **Node.js** instalado para gerenciar pacotes e rodar o projeto.
+>   <img src="https://i.postimg.cc/T2rr7vXB/8c59cf20afa93b0bef8331427c5b8330.png" alt="Node.js Logo" width="20"/> Ter o **Node.js** instalado para gerenciar pacotes e rodar o projeto.
 >
 >
 >
