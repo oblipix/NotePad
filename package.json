@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
+  "author": {
+    "name": "Maria Carolina",
+    "email": "mariacarolinatech@gmail.com"
+  },
   "type": "module",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "electron-builder"
+    
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^33.2.0",
@@ -19,9 +23,7 @@
   },
   "dependencies": {
     "@octokit/rest": "^21.0.2",
-    "i18next": "^24.0.0",
-    "i18next-browser-languagedetector": "^8.0.0",
-    "marked": "^15.0.2"
+     "marked": "^15.0.2"
   },
   "build": {
     "appId": "com.notepad.app",
@@ -37,12 +39,17 @@
       "target": "nsis",
       "icon": "src/icon/np.ico"
     },
-    "linux": {
+   "linux": {
+      "target": ["deb"],
       "icon": "src/icon.png"
-    },
+},
     "mac": {
-      "icon": "src/icon.icns"
-    },
+  "target": ["dmg", "zip"],
+  "icon": "src/icon.icns",
+  "category": "public.app-category.utilities",
+  "artifactName": "${productName}-${version}-${os}.${ext}"
+},
+
     "nsis": {
       "oneClick": false,
       "perMachine": true,
