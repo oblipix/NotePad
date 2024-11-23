@@ -81,7 +81,7 @@ ___
 > Atenção: Depois que o token for gerado, copie-o imediatamente. O GitHub não mostrará o token novamente. Guarde-o em um local seguro, como um gerenciador de senhas.
 >
 > #### Usando o Personal Access Token no Git
-> Depois de gerar o token, você pode usá-lo para interagir com o GitHub usando o Git via linha de comando (para fazer push, pull ou clonar repositórios).
+> Depois de gerar o token, você pode usá-lo para interagir com o GitHub na linha do **Token de Acesso Pessoal**
 
 
 ___
