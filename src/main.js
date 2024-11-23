@@ -6,7 +6,7 @@ import { marked } from 'marked';
 
 let mainWindow;
 
-// Function to create the main window
+// Função para criar a janela principal
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
@@ -22,40 +22,40 @@ function createWindow() {
     mainWindow = null;
   });
 
-  // Create custom menu
+  // Criar o menu personalizado
   const template = [
     {
-      label: 'File',
+      label: 'Arquivo',
       submenu: [
-        { label: 'Open', click: openFileDialog }, // Added to menu
+        { label: 'Abrir', click: openFileDialog }, // Adicionado ao menu
         { type: 'separator' },
-        { label: 'Quit', role: 'quit' },
+        { label: 'Sair', role: 'quit' },
       ]
     },
     {
-      label: 'Edit',
+      label: 'Editar',
       submenu: [
-        { label: 'Undo', role: 'undo' },
-        { label: 'Redo', role: 'redo' },
+        { label: 'Desfazer', role: 'undo' },
+        { label: 'Refazer', role: 'redo' },
         { type: 'separator' },
-        { label: 'Copy', role: 'copy' },
-        { label: 'Paste', role: 'paste' },
+        { label: 'Copiar', role: 'copy' },
+        { label: 'Colar', role: 'paste' },
       ]
     },
     {
-      label: 'Help',
+      label: 'Ajuda',
       submenu: [
         {
-          label: 'Instruction for Use',
+          label: 'Instruções de Uso',
           click() {
             openInstructionModal();
           }
         },
         { type: 'separator' },
         {
-          label: 'About',
+          label: 'Sobre',
           click() {
-            openAboutModal(); // Action when clicking on 'About'
+            openAboutModal(); // Ação ao clicar em 'Sobre'
           }
         }
       ]
@@ -67,36 +67,36 @@ function createWindow() {
 }
 
 function openInstructionModal() {
-  // Sends a message to the renderer process (front-end) to open the modal
+  // Envia uma mensagem para o processo de renderização (front-end) para abrir o modal
   mainWindow.webContents.send('open-instruction-modal');
 }
 
 function openAboutModal() {
-  // Sends a message to the renderer process (front-end) to open the "About" modal
+  // Envia uma mensagem para o processo de renderização (front-end) para abrir o modal "Sobre"
   mainWindow.webContents.send('open-about-modal');
 }
 
-// Calls the function to create the window when the app is ready
+// Chama a função para criar a janela quando o aplicativo estiver pronto
 app.whenReady().then(createWindow);
 
-// Close the application when all windows are closed
+// Fecha o aplicativo quando todas as janelas forem fechadas
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-// If the app is reactivated
+// Se o aplicativo for reativado
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
 
-// IPC to save to GitHub
+// IPC para salvar no GitHub
 ipcMain.on('save-to-github', async (event, { token, username, repo, content }) => {
   try {
     const octokit = new Octokit({ auth: token });
     const filePath = "notes/note.md";
-    const message = "Adding new note";
+    const message = "Adicionando nova nota";
 
     let existingFile = null;
     try {
@@ -107,10 +107,10 @@ ipcMain.on('save-to-github', async (event, { token, username, repo, content }) =
       });
     } catch (err) {
       if (err.status === 404) {
-        console.log("⚠️ File not found. Creating a new one.");
+        console.log("⚠️ Arquivo não encontrado. Criando um novo.");
       } else {
-        console.error("❌ Error checking the existing file!:", err);
-        event.reply('file-saved', { success: false, message: '❌ Error checking the file in the GitHub repository!' });
+        console.error("❌ Erro ao verificar o arquivo existente!:", err);
+        event.reply('file-saved', { success: false, message: '❌ Erro ao verificar o arquivo no repositório do GitHub!' });
         return;
       }
     }
@@ -126,70 +126,70 @@ ipcMain.on('save-to-github', async (event, { token, username, repo, content }) =
       sha: existingFile ? existingFile.data.sha : undefined,
     });
 
-    event.reply('file-saved', { success: true, message: '✅ Note successfully sent to the GitHub repository!' });
+    event.reply('file-saved', { success: true, message: '✅ Nota enviada ao repositório do GitHub com sucesso!' });
   } catch (error) {
-    console.error("Error sending to GitHub:", error);
-    event.reply('file-saved', { success: false, message: `❌ Error sending to GitHub: ${error.message}` });
+    console.error("Erro ao enviar para o GitHub:", error);
+    event.reply('file-saved', { success: false, message: `❌ Erro ao enviar para o GitHub: ${error.message}` });
   }
 });
 
-// IPC to save locally with path selection
+// IPC para salvar localmente com seleção de caminho
 ipcMain.on('save-file', (event, noteContent) => {
-  console.log("Content received in the main process: ", noteContent);
+  console.log("Conteúdo recebido no processo principal: ", noteContent);
 
-  // Open dialog to choose file path
+  // Abre o diálogo para escolher o caminho do arquivo
   dialog.showSaveDialog({
-    title: 'Choose where to save the file',
-    defaultPath: path.join(app.getPath('desktop'), 'note.txt'), // Default path to save on desktop
-    filters: [{ name: 'Text Files', extensions: ['txt'] }]
+    title: 'Escolha onde salvar o arquivo',
+    defaultPath: path.join(app.getPath('desktop'), 'note.txt'), // Caminho padrão para salvar na área de trabalho
+    filters: [{ name: 'Arquivos de Texto', extensions: ['txt'] }]
   }).then(result => {
     if (result.canceled) {
-      event.reply('file-saved', { success: false, message: '⚠️ User canceled the path selection.' });
+      event.reply('file-saved', { success: false, message: '⚠️ Usuário cancelou a seleção de caminho.' });
       return;
     }
 
-    const filePath = result.filePath; // Path chosen by the user
+    const filePath = result.filePath; // Caminho escolhido pelo usuário
 
-    // Check if the writing was successful
+    // Verifica se a gravação foi bem-sucedida
     fs.writeFile(filePath, noteContent, (err) => {
       if (err) {
-        console.error("❌ Error saving the file locally.", err);
-        event.reply('file-saved', { success: false, message: `❌ Error saving the file: ${err.message}` });
+        console.error("❌ Erro ao salvar o arquivo localmente.", err);
+        event.reply('file-saved', { success: false, message: `❌ Erro ao salvar o arquivo: ${err.message}` });
         return;
       }
-      console.log("File saved at:", filePath);
-      event.reply('file-saved', { success: true, message: `✅ File saved at: ${filePath}` });
+      console.log("Arquivo salvo em:", filePath);
+      event.reply('file-saved', { success: true, message: `✅ Arquivo salvo em: ${filePath}` });
     });
   }).catch(err => {
-    console.error("❌ Error opening save dialog:", err);
-    event.reply('file-saved', { success: false, message: `❌ Error opening the save dialog here: ${err.message}` });
+    console.error("❌ Erro ao abrir o diálogo de salvamento:", err);
+    event.reply('file-saved', { success: false, message: `❌ Erro ao abrir o diálogo de salvamento aqui: ${err.message}` });
   });
 });
 
-// Function to open the file open dialog
+// Função para abrir o diálogo de abrir arquivo
 function openFileDialog() {
   dialog.showOpenDialog({
-    title: '📂 File opened successfully!',
-    filters: [{ name: 'Text Files', extensions: ['txt'] }],
-    properties: ['openFile'] // Allows only files to be opened
+    title: '📂 Arquivo aberto com sucesso!',
+    filters: [{ name: 'Arquivos de Texto', extensions: ['txt'] }],
+    properties: ['openFile'] // Permite apenas arquivos para serem abertos
   }).then(result => {
     if (result.canceled) {
       return;
     }
 
-    const filePath = result.filePaths[0]; // Path of the chosen file
+    const filePath = result.filePaths[0]; // Caminho do arquivo escolhido
 
-    // Read the content of the file
+    // Lê o conteúdo do arquivo
     fs.readFile(filePath, 'utf-8', (err, data) => {
       if (err) {
-        console.error("❌ Error reading the file:", err);
+        console.error("❌ Erro ao ler o arquivo:", err);
         return;
       }
 
-      // Sends the file content to the renderer
+      // Envia o conteúdo do arquivo para o renderer
       mainWindow.webContents.send('file-opened', data);
     });
   }).catch(err => {
-    console.error("❌ Error opening the file open dialog:", err);
+    console.error("❌ Erro ao abrir o diálogo de abrir arquivo:", err);
   });
 }

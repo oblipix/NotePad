@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NotePad</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Righteous&display=swap" rel="stylesheet">
 
-
-  
   <!-- CDN para o Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   
@@ -20,24 +18,20 @@
   <header>
     <div class="title-container">
       <h1>NotePad</h1>
-      <p class="descricao-texto">Your simple and powerful note editor!</p>
+      <p class="descricao-texto">Seu editor de notas simples e poderoso!</p>
     </div>
   </header>
 
-
-
   <main>
-
-    
     <div class="container">
       <!-- Área de Notas -->
       <section>
-        <textarea id="notePad" rows="10" cols="50" placeholder="Enter your note here..."></textarea>
+        <textarea id="notePad" rows="10" cols="50" placeholder="Digite sua nota aqui..."></textarea>
       </section>
     
       <!-- Botões de Ação -->
       <section id="actionButtons">
-        <button id="saveLocalBtn">Save Locally</button>
+        <button id="saveLocalBtn">Salvar Localmente</button>
         <button id="connectGitHubBtn"><i class="fab fa-github"></i></button>
       </section>
     
@@ -45,68 +39,59 @@
       <section>
         <div id="markdownPreview" class="markdown-preview"></div>
       </section>
-   </div>
+    </div>
     
 
-   
-<!-- Modal de Conexão com GitHub -->
-<div id="githubAuthModal" class="modal" style="display: none;">
-  <div class="modal-content" style="cursor: move;">
-    <span class="close-btn" id="closeModalBtn">&times;</span>
-    <h2>Connect to GitHub <i class="fab fa-github"></i></h2>
-    <p>Fill out the fields below to send your note to the GitHub repository:</p>
+    <!-- Modal de Conexão com GitHub -->
+    <div id="githubAuthModal" class="modal" style="display: none;">
+      <div class="modal-content" style="cursor: move;">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <h2>Conectar ao GitHub <i class="fab fa-github"></i></h2>
+        <p>Preencha os campos abaixo para enviar sua nota para o repositório do GitHub:</p>
 
-    <label for="githubToken" class="label-custom">Personal Access Token:</label>
-    <input type="text" id="githubToken" placeholder="Enter your token" />
+        <label for="githubToken" class="label-custom">Token de Acesso Pessoal:</label>
+        <input type="text" id="githubToken" placeholder="Digite seu token" />
 
-    <label for="githubUsername" class="label-custom">Username:</label>
-    <input type="text" id="githubUsername" placeholder="Enter your username" />
+        <label for="githubUsername" class="label-custom">Nome de Usuário:</label>
+        <input type="text" id="githubUsername" placeholder="Digite seu nome de usuário" />
 
-    <label for="githubRepo" class="label-custom">Repository Name:</label>
-    <input type="text" id="githubRepo" placeholder="Enter repository name" />
+        <label for="githubRepo" class="label-custom">Nome do Repositório:</label>
+        <input type="text" id="githubRepo" placeholder="Digite o nome do repositório" />
 
-    <button id="saveToGitHubBtn">Push to GitHub</button>
-  </div>
-</div>
-
+        <button id="saveToGitHubBtn">Enviar para o GitHub</button>
+      </div>
+    </div>
 
     <!-- Modal para Instruções -->
     <div id="instructionModal" class="modal">
       <div class="modal-content">
-        <h2>Instructions for use</h2>
-        <p><strong>Welcome to NotePad!</strong> This is a simple and practical application for taking quick notes. Here you can store ideas, tasks or reminders efficiently and without complications.</p>
+        <h2>Instruções de uso</h2>
+        <p><strong>Bem-vindo ao NotePad!</strong> Este é um aplicativo simples e prático para anotar rapidamente. Aqui você pode armazenar ideias, tarefas ou lembretes de forma eficiente e sem complicações.</p>
     
-        <p><strong>How to use:</strong></p>
+        <p><strong>Como usar:</strong></p>
         <ul>
-          <li><strong>Type your notes:</strong> Use a text box at the top of the page to type your notes. NotePad accepts plain text.</li>
-          <li><strong>Save Locally:</strong> After typing your note, click the "Save Locally" button to store it on your device.</li>
-          <li><strong>Connect to GitHub:</strong> If you want to store your notes remotely, you can connect NotePad to GitHub via the "Connect to GitHub" button. This will allow you to save the notes to your GitHub account.</li>
-          <li><strong>Preview:</strong> Next to the text box, you can see a real-time preview of your note. Ideal for you to visualize how to obtain your markdown before uploading to GitHub.</li>
+          <li><strong>Digite suas notas:</strong> Use a caixa de texto no topo da página para digitar suas notas. O NotePad aceita texto simples.</li>
+          <li><strong>Salvar Localmente:</strong> Depois de digitar sua nota, clique no botão "Salvar Localmente" para armazená-la no seu dispositivo.</li>
+          <li><strong>Conectar ao GitHub:</strong> Se você quiser armazenar suas notas remotamente, pode conectar o NotePad ao GitHub clicando no botão "Conectar ao GitHub". Isso permitirá que você salve as notas na sua conta do GitHub.</li>
+          <li><strong>Visualizar:</strong> Ao lado da caixa de texto, você pode ver uma pré-visualização em tempo real da sua nota. Ideal para visualizar como obter seu markdown antes de enviar para o GitHub.</li>
         </ul>
-        <button id="closeModal">To close</button>
+        <button id="closeModal">Fechar</button>
       </div>
     </div>
 
-
-
-
-
-
-    
-<!-- Modal para Sobre -->
-<div id="aboutModal" class="modal">
-  <div class="modal-content">
-    <h2>About NotePad</h2>
-    <p>NotePad is a simple note-taking application, developed by <strong>Maria Carolina</strong>, a front-end developer. The objective of this application is to offer a practical and efficient platform for quick notes, with the possibility of saving locally and even connecting to GitHub to store notes remotely.</p>
-    <p>This tool was created with the aim of making it easier to store ideas, tasks and reminders quickly and intuitively.</p>
-    <p><strong>Contact:</strong> <a href="mailto:mariacarolinatech@gmail.com">mariacarolinatech@gmail.com</a></p>
-    <button id="closeAboutModal">To close</button>
-  </div>
-</div>
-
+    <!-- Modal para Sobre -->
+    <div id="aboutModal" class="modal">
+      <div class="modal-content">
+        <h2>Sobre o NotePad</h2>
+        <p>NotePad é uma aplicação simples para tomar notas, desenvolvida por <strong>Maria Carolina</strong>, uma desenvolvedora front-end. O objetivo desta aplicação é oferecer uma plataforma prática e eficiente para anotações rápidas, com a possibilidade de salvar localmente e até conectar ao GitHub para armazenar as notas remotamente.</p>
+        <p>Essa ferramenta foi criada com a intenção de facilitar o armazenamento de ideias, tarefas e lembretes de forma rápida e intuitiva.</p>
+        <p><strong>Contato:</strong> <a href="mailto:mariacarolinatech@gmail.com">mariacarolinatech@gmail.com</a></p>
+        <button id="closeAboutModal">Fechar</button>
+      </div>
+    </div>
 
     <!-- Referência ao Arquivo renderer.js -->
     <script src="renderer.js"></script>    
-    
+
 </body>
 </html>

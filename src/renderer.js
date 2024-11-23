@@ -9,21 +9,21 @@ textArea.addEventListener('input', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const githubModal = document.querySelector("#githubAuthModal .modal-content"); // GitHub modal selector
-  const closeModalBtn = document.getElementById("closeModalBtn"); // Close the modal
+  const githubModal = document.querySelector("#githubAuthModal .modal-content"); // Seletor do modal do GitHub
+  const closeModalBtn = document.getElementById("closeModalBtn"); // Botão para fechar o modal
   let isDragging = false;
   let offsetX = 0;
   let offsetY = 0;
 
-  // Start dragging the GitHub modal
+  // Começar a arrastar o modal do GitHub
   githubModal.addEventListener("mousedown", (e) => {
     isDragging = true;
     offsetX = e.clientX - githubModal.offsetLeft;
     offsetY = e.clientY - githubModal.offsetTop;
-    githubModal.style.cursor = "grabbing"; // Grabbing cursor
+    githubModal.style.cursor = "grabbing"; // Cursor de arrastar
   });
 
-  // Move the GitHub modal
+  // Mover o modal do GitHub
   document.addEventListener("mousemove", (e) => {
     if (isDragging) {
       const x = e.clientX - offsetX;
@@ -33,34 +33,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // End dragging
+  // Finalizar o arraste
   document.addEventListener("mouseup", () => {
     isDragging = false;
-    githubModal.style.cursor = "move"; // Default cursor after dragging
+    githubModal.style.cursor = "move"; // Cursor padrão após arrastar
   });
 
-  // Function to close the GitHub modal
+  // Função para fechar o modal do GitHub
   closeModalBtn.addEventListener("click", () => {
     document.getElementById("githubAuthModal").style.display = "none";
   });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const githubModal = document.querySelector("#githubAuthModal .modal-content"); // GitHub modal selector
-  const closeModalBtn = document.getElementById("closeModalBtn"); // Close the modal
+  const githubModal = document.querySelector("#githubAuthModal .modal-content"); // Seletor do modal do GitHub
+  const closeModalBtn = document.getElementById("closeModalBtn"); // Botão para fechar o modal
   let isDragging = false;
   let offsetX = 0;
   let offsetY = 0;
 
-  // Start dragging the GitHub modal
+  // Começar a arrastar o modal do GitHub
   githubModal.addEventListener("mousedown", (e) => {
     isDragging = true;
     offsetX = e.clientX - githubModal.offsetLeft;
     offsetY = e.clientY - githubModal.offsetTop;
-    githubModal.style.cursor = "grabbing"; // Grabbing cursor
+    githubModal.style.cursor = "grabbing"; // Cursor de arrastar
   });
 
-  // Move the GitHub modal
+  // Mover o modal do GitHub
   document.addEventListener("mousemove", (e) => {
     if (isDragging) {
       const x = e.clientX - offsetX;
@@ -70,60 +70,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // End dragging
+  // Finalizar o arraste
   document.addEventListener("mouseup", () => {
     isDragging = false;
-    githubModal.style.cursor = "move"; // Default cursor after dragging
+    githubModal.style.cursor = "move"; // Cursor padrão após arrastar
   });
 
-  // Function to close the GitHub modal
+  // Função para fechar o modal do GitHub
   closeModalBtn.addEventListener("click", () => {
     document.getElementById("githubAuthModal").style.display = "none";
   });
 });
 
-// Function to open the usage instructions modal
+// Função para abrir o modal de instruções de uso
 ipcRenderer.on('open-instruction-modal', () => {
   document.getElementById('instructionModal').style.display = 'block';
 });
 
-// Function to open the "About" modal
+// Função para abrir o modal "Sobre"
 ipcRenderer.on('open-about-modal', () => {
-  document.getElementById('aboutModal').style.display = 'block'; // Show the "About" modal
+  document.getElementById('aboutModal').style.display = 'block'; // Mostrar o modal "Sobre"
 });
 
-// Close the usage instructions modal
+// Fechar o modal de instruções de uso
 document.getElementById('closeModal').addEventListener('click', () => {
   document.getElementById('instructionModal').style.display = 'none';
 });
 
-// Close the "About" modal when the "Close" button is clicked
+// Fechar o modal "Sobre" quando o botão "Fechar" for clicado
 document.getElementById('closeAboutModal').addEventListener('click', () => {
   document.getElementById('aboutModal').style.display = 'none';
 });
 
-// Display the GitHub connection form
+// Exibir o formulário de conexão com o GitHub
 document.getElementById("connectGitHubBtn").addEventListener("click", () => {
   document.getElementById("githubAuthForm").style.display = "block";
 });
 
-// Handle sending data to GitHub
+// Enviar dados para o GitHub
 document.getElementById("saveToGitHubBtn").addEventListener("click", () => {
   const token = document.getElementById("githubToken").value.trim();
   const username = document.getElementById("githubUsername").value.trim();
   const repo = document.getElementById("githubRepo").value.trim();
   const noteContent = document.getElementById("notePad").value;
 
-  // Check if all fields are filled
+  // Verificar se todos os campos estão preenchidos
   if (!token || !username || !repo || !noteContent) {
-    alert("All fields are required!");
+    alert("Todos os campos são obrigatórios!");
     return;
   }
 
-  // Send data to the main process to save to GitHub
+  // Enviar dados para o processo principal para salvar no GitHub
   ipcRenderer.send('save-to-github', { token, username, repo, content: noteContent });
 
-  // Display feedback for the user
+  // Exibir feedback para o usuário
   ipcRenderer.once('file-saved', (event, result) => {
     alert(result.message);
 
@@ -136,44 +136,44 @@ document.getElementById("saveToGitHubBtn").addEventListener("click", () => {
   });
 });
 
-// Event to save locally on Desktop
+// Evento para salvar localmente na área de trabalho
 document.getElementById("saveLocalBtn").addEventListener("click", () => {
   const noteContent = document.getElementById("notePad").value;
   
-  // Check if there is content to save
+  // Verificar se há conteúdo para salvar
   if (!noteContent) {
-    alert("The content is empty. Cannot save.");
+    alert("O conteúdo está vazio. Não é possível salvar.");
     return;
   }
 
-  // Send to the main process to save on Desktop
+  // Enviar para o processo principal salvar na área de trabalho
   ipcRenderer.send('save-file', noteContent);
 
-  // Display feedback after saving
+  // Exibir feedback após salvar
   ipcRenderer.once('file-saved', (event, result) => {
     alert(result.message);
   });
 });
 
-// Function to open the GitHub authentication modal
+// Função para abrir o modal de autenticação do GitHub
 function openGitHubAuthModal() {
   const modal = document.getElementById('githubAuthModal');
   modal.style.display = 'block';
 }
 
-// Function to close the GitHub authentication modal
+// Função para fechar o modal de autenticação do GitHub
 function closeGitHubAuthModal() {
   const modal = document.getElementById('githubAuthModal');
   modal.style.display = 'none';
 }
 
-// Add click event to close the modal
+// Adicionar evento de clique para fechar o modal
 document.getElementById('closeModalBtn').addEventListener('click', closeGitHubAuthModal);
 
-// Open the modal when necessary (example usage)
+// Abrir o modal quando necessário (exemplo de uso)
 document.getElementById('connectGitHubBtn').addEventListener('click', openGitHubAuthModal);
 
-// Close the modal when clicking outside the content
+// Fechar o modal quando clicar fora do conteúdo
 window.addEventListener('click', function(event) {
   const modal = document.getElementById('githubAuthModal');
   if (event.target === modal) {
@@ -181,19 +181,19 @@ window.addEventListener('click', function(event) {
   }
 });
 
-// Function to save data to localStorage
+// Função para salvar dados no localStorage
 function saveToLocalStorage() {
   const githubToken = document.getElementById('githubToken').value;
   const githubUsername = document.getElementById('githubUsername').value;
   const githubRepo = document.getElementById('githubRepo').value;
 
-  // Storing data in localStorage
+  // Armazenar dados no localStorage
   localStorage.setItem('githubToken', githubToken);
   localStorage.setItem('githubUsername', githubUsername);
   localStorage.setItem('githubRepo', githubRepo);
 }
 
-// Function to populate fields from localStorage
+// Função para preencher campos com dados do localStorage
 function populateFieldsFromLocalStorage() {
   const githubToken = localStorage.getItem('githubToken');
   const githubUsername = localStorage.getItem('githubUsername');
@@ -210,19 +210,19 @@ function populateFieldsFromLocalStorage() {
   }
 }
 
-// Call function to populate fields when the modal is opened
+// Chamar função para preencher os campos quando o modal for aberto
 document.getElementById('githubAuthModal').addEventListener('click', function() {
   populateFieldsFromLocalStorage();
 });
 
-// Function to open a file
+// Função para abrir um arquivo
 document.getElementById("openFileBtn").addEventListener("click", () => {
   ipcRenderer.invoke('open-file-dialog').then(filePath => {
     if (filePath) {
-      // Load the content of the selected file
+      // Carregar o conteúdo do arquivo selecionado
       fs.readFile(filePath, 'utf-8', (err, data) => {
         if (err) {
-          alert("Error opening file");
+          alert("Erro ao abrir o arquivo");
         } else {
           document.getElementById("notePad").value = data;
         }
