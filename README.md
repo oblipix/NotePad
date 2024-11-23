@@ -92,8 +92,6 @@ ___
 
 ◾Interface Simples e Intuitiva:  Design minimalista e fácil de usar, adequado para todos os tipos de usuários.
 
-◾ Multi-Plataforma: Disponível para Windows e Linux.
-
 ◾ Criação e Edição de Notas: Permite criar, salvar e gerenciar suas anotações de forma rápida e organizada.
 
 ◾ Instalador Simples: Instale facilmente através de um executável gerado com **Electron Builder**.
