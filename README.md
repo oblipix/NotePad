@@ -1,5 +1,5 @@
 
-___
+
 ## 📝 NotePad
 
 
@@ -154,17 +154,6 @@ digitando toda vez.
 
 
 
-  ## 🌀 Vamos clonar este repositório passo a passo. 
-
-  
-_Obtenha a URL do repositório:_
-
-` https://github.com/oblipix/NotePad.git `
-
-
-
-
-navegue até a pasta onde deseja clonar.
 
 **Clone o repositório:**
 
@@ -176,22 +165,6 @@ git clone https://github.com/oblipix/NotePad.git
 <sub> Agora você tem uma cópia local do repositório que pode ser modificada conforme necessário. </sub>
 
 ___
-
-
-
-## Apoie este projeto ☕️
-
-Se você gostou deste projeto, considere apoiar com um café! Seu apoio ajuda a manter o projeto ativo e em desenvolvimento.
-
-[![Apoie com um café](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow.svg)](https://buymeacoffee.com/oblipix)
-
-Obrigado pelo seu apoio! ☕️💖
-
-| Language | Download |
-| --- | --- |
-| `PT-BR`   | https://www.mediafire.com/file/yw7yphao6ekdsyt/Notepad-ptBr_Setup_1.0.0.exe/file |
-| `ENGLISH` | https://www.mediafire.com/file/uwhm1qxae9lsvb9/Notepad-Eng_Setup_1.0.0.exe/file |
-
 
 
 ## 📜 Licença
