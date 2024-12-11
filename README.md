@@ -1,4 +1,22 @@
 
+___
+## 📝 NotePad
+
+
+
+
+O NotePad é um aplicativo de bloco de notas moderno, criado com Electron, projetado para oferecer uma experiência simples e eficiente para criar, 
+editar e salvar notas no seu computador. Com suporte para diversas plataformas (Windows, macOS e Linux), o NotePad proporciona uma interface amigável e recursos intuitivos,
+permitindo que os usuários façam anotações rapidamente sem distrações.
+
+Desenvolvido para ser leve e adaptável, o NotePad é ideal tanto para tarefas simples, como escrever notas rápidas, quanto para organizar ideias de forma mais detalhada, 
+sem comprometer o desempenho do sistema. Ele foi feito para ser fácil de usar, mas sem abrir mão de funcionalidades importantes, como a capacidade de salvar e abrir múltiplos
+documentos, além de oferecer opções de formatação para facilitar a criação de notas estruturadas.
+
+Com a robustez do Electron, o NotePad também garante a sincronização de arquivos locais, para que você possa acessar suas notas rapidamente sempre que precisar.
+Ele é especialmente útil para quem busca praticidade, sem a necessidade de instalar programas pesados.
+
+Além disso, o NotePad pode ser personalizado para atender a diferentes preferências de usuários, oferecendo uma solução prática para quem precisa de um bloco de notas eficiente e leve.
 
 
 
@@ -30,24 +48,6 @@ Obrigado pelo seu apoio! ☕️💖
 
 
 
-___
-## NotePad
-
-
-
-
-O NotePad é um aplicativo de bloco de notas moderno, criado com Electron, projetado para oferecer uma experiência simples e eficiente para criar, 
-editar e salvar notas no seu computador. Com suporte para diversas plataformas (Windows, macOS e Linux), o NotePad proporciona uma interface amigável e recursos intuitivos,
-permitindo que os usuários façam anotações rapidamente sem distrações.
-
-Desenvolvido para ser leve e adaptável, o NotePad é ideal tanto para tarefas simples, como escrever notas rápidas, quanto para organizar ideias de forma mais detalhada, 
-sem comprometer o desempenho do sistema. Ele foi feito para ser fácil de usar, mas sem abrir mão de funcionalidades importantes, como a capacidade de salvar e abrir múltiplos
-documentos, além de oferecer opções de formatação para facilitar a criação de notas estruturadas.
-
-Com a robustez do Electron, o NotePad também garante a sincronização de arquivos locais, para que você possa acessar suas notas rapidamente sempre que precisar.
-Ele é especialmente útil para quem busca praticidade, sem a necessidade de instalar programas pesados.
-
-Além disso, o NotePad pode ser personalizado para atender a diferentes preferências de usuários, oferecendo uma solução prática para quem precisa de um bloco de notas eficiente e leve.
 
 ___
 > [!NOTE]
@@ -95,7 +95,7 @@ ___
 
 
 
-**Funcionalidades**
+## 📚 Funcionalidades
 
 ◾ Interface Simples e Intuitiva:  Design minimalista e fácil de usar, adequado para todos os tipos de usuários.
 
@@ -113,7 +113,7 @@ digitando toda vez.
 
 
 
-## Como Clonar este Repositório
+## ⚙️ Como Clonar este Repositório
 
 
 
@@ -147,14 +147,14 @@ digitando toda vez.
 >
 > 
 
-## 📄 Estrutura do Projeto
+#### 📄 Estrutura do Projeto
 
 
 ![Captura de tela 2024-12-11 090109](https://github.com/user-attachments/assets/d114a425-a870-4c09-9220-0dd3a17fe69c)
 
 
 
-  ### Vamos clonar este repositório passo a passo. 
+  ## 🌀 Vamos clonar este repositório passo a passo. 
 
   
 _Obtenha a URL do repositório:_
@@ -194,7 +194,8 @@ Obrigado pelo seu apoio! ☕️💖
 
 
 
-
+## 📜 Licença
+Esse projeto está licenciado sob a MIT License.
 
 
 
