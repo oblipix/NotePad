@@ -27,15 +27,12 @@ https://github.com/user-attachments/assets/52d8509c-638a-4f99-aa85-1396e73c9fe9
 
 
 
-### Apoie este projeto ☕️
-
-<sub>Se você gostou deste projeto, considere apoiar com um café! Seu apoio ajuda a manter o projeto ativo e em desenvolvimento.
-
-[![Apoie com um café](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow.svg)](https://buymeacoffee.com/oblipix)
-
-Obrigado pelo seu apoio! ☕️💖 
 
 
+
+
+
+## 🌐 Downloads
 
 | Language | Download |
 | --- | --- |
@@ -44,7 +41,11 @@ Obrigado pelo seu apoio! ☕️💖
 </sub>
 
 
+### Apoie este projeto ☕️💖 
 
+<sub>Se você gostou deste projeto, considere apoiar com um café! Seu apoio ajuda a manter o projeto ativo e em desenvolvimento.
+
+[![Apoie com um café](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow.svg)](https://buymeacoffee.com/oblipix)
 
 
 
