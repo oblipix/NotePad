@@ -147,7 +147,10 @@ digitando toda vez.
 >
 > 
 
+## 📄 Estrutura do Projeto
 
+
+![Captura de tela 2024-12-11 090109](https://github.com/user-attachments/assets/d114a425-a870-4c09-9220-0dd3a17fe69c)
 
 
 
