@@ -21,7 +21,9 @@ Além disso, o NotePad pode ser personalizado para atender a diferentes preferê
 
 
 
-https://github.com/user-attachments/assets/52d8509c-638a-4f99-aa85-1396e73c9fe9
+
+https://github.com/user-attachments/assets/390910ff-b055-44cd-9310-27a6a092fbbd
+
 
 
 
@@ -36,8 +38,8 @@ https://github.com/user-attachments/assets/52d8509c-638a-4f99-aa85-1396e73c9fe9
 
 | Language | Download |
 | --- | --- |
-| `PT-BR`   | https://www.mediafire.com/file/yw7yphao6ekdsyt/Notepad-ptBr_Setup_1.0.0.exe/file |
-| `ENGLISH` | https://www.mediafire.com/file/uwhm1qxae9lsvb9/Notepad-Eng_Setup_1.0.0.exe/file |
+| `PT-BR`   | https://www.mediafire.com/file/bem4i8qskv6q213/Notepad_Setup_ptBR_1.0.3.exe/file |
+| `ENGLISH` | https://www.mediafire.com/file/ihcyi3eajd6ytn4/Notepad_Setup_Eng_1.0.3.exe/file  |
 </sub>
 
 
@@ -106,8 +108,7 @@ ___
 
 ◾ Instalador Simples: Instale facilmente através de um executável gerado com **Electron Builder**.
 
-◾ Armazenamento Local: Suporte para salvar arquivos em seu computador, sem depender da internet e Armazanamento dos seus dados do github, sem necessidade de estar
-digitando toda vez.
+◾ Armazenamento Local: Suporte para salvar arquivos em seu computador, sem depender da internet.
 
 
 
