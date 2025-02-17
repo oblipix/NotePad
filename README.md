@@ -26,8 +26,7 @@ https://github.com/user-attachments/assets/390910ff-b055-44cd-9310-27a6a092fbbd
 
 
 
-
-![Captura de tela 2025-02-17 130124](https://github.com/user-attachments/assets/41b2e5ce-13cd-4e58-a970-b5237752e7ac)
+![4](https://github.com/user-attachments/assets/77fd9f90-dfa6-4909-b538-1445b9156fb3)
 
 
 
@@ -59,39 +58,22 @@ ___
 >
 >
 >
-> **1. Faça login na sua conta do GitHub:**
-> Acesse GitHub e entre na sua conta.
+> **1. Faça login na sua conta do GitHub:** Acesse GitHub e entre na sua conta.
 >
-> **2. Acesse as configurações do GitHub:**
-> No canto superior direito da tela, clique na sua foto de perfil e, no menu suspenso, selecione "Settings" (Configurações).
+> **2. Configurações:** Vá em "Settings" > "Developer settings".
 >
-> **3. Vá para a seção de Tokens de Acesso:**
-> No menu à esquerda, clique em "Developer settings".
-> Em seguida, clique em "Personal access tokens" (Tokens de acesso pessoal).
+> **3. Tokens:** Selecione "Personal access tokens".
 >
-> **4. Gerar um Novo Token de Acesso Pessoal:**
-> Clique no botão ```"Generate new token" (Gerar novo token).```
-> GitHub pedirá que você digite a sua senha para confirmar a ação.
+> **4. Gerar Token:** Clique em "Generate new token" e insira sua senha.
 >
-> **5. Defina as permissões para o token:**
-> ```Dê um nome para o token:``` Escolha um nome que identifique o uso do token, como "Token para Notepad" ou "Token de acesso para automação".
+> **5. Permissões:** Dê um nome ao token e selecione os escopos desejados, como repo para acesso a repositórios.
+> 
+>**6. Expiração:** Defina a expiração ou deixe em branco para sem expiração.
 >
-> Selecione os escopos (permissões) que você deseja que o token tenha. Os escopos determinam o que o token pode fazer. Por exemplo:
-> repo: Para acessar repositórios privados e públicos.
-> workflow: Para interagir com GitHub Actions.
-> read:org: Para acessar informações de organização.
-> Se o token for apenas para fazer push e pull de repositórios (como no caso de usar o Git), o escopo repo será suficiente.
+> **7. Gerar:** Clique em "Generate token".
 >
-> **6. Defina o tempo de expiração (opcional):**
-> Você pode definir uma data de expiração para o token, como 30 dias, 60 dias, etc., ou deixar o token sem data de expiração (recomendado se for algo contínuo).
->
-> **7. Gerar o Token:**
-> Após configurar as permissões e outras opções, clique em "Generate token" (Gerar token).
-> O GitHub exibirá o token gerado.
->
-> **8. Copiar o Token:**
-> Atenção: Depois que o token for gerado, copie-o imediatamente. O GitHub não mostrará o token novamente. Guarde-o em um local seguro, como um gerenciador de senhas.
->
+> **8. Copiar:** Copie o token gerado e guarde em um local seguro.
+
 
 
 
