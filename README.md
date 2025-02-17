@@ -27,6 +27,7 @@ https://github.com/user-attachments/assets/390910ff-b055-44cd-9310-27a6a092fbbd
 
 
 
+![Captura de tela 2025-02-17 130124](https://github.com/user-attachments/assets/41b2e5ce-13cd-4e58-a970-b5237752e7ac)
 
 
 
